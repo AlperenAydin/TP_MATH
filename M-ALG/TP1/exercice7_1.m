@@ -18,7 +18,7 @@ M = [1,1,1,0,0,0,0,0,0,0 %a1
  
  Xk = ones(10,1);
  size(Xk)
- X =M\N
+ X =M\N;
  
  Nk=M*Xk
  
