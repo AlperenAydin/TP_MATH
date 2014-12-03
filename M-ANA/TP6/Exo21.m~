@@ -1,0 +1,19 @@
+clear all;close all;
+n= 300;
+m=n;
+[x,y]=meshgrid(1:n,1:m);
+
+v = [0.5,1,2,5];
+l = length(v);
+for i = 1:l
+    v1 =50;
+    v2 =v1;
+    M=cos(v1*x+v2*y);
+    subplot(1,2,1);
+    imshow(M);
+    
+    TF_M_real = uint8(real(fftshift(fft2 (M))));
+    subplot(1,2);
+    imshow(TF_M_real);
+
+end
