@@ -1,4 +1,4 @@
-close all; clear all; hold on
+close all; clear all; 
 
 M = [1,1,1,0,0,0,0,0,0,0 %a1
      0,0,0,1,1,1,1,0,0,0 %a2
@@ -18,7 +18,7 @@ M = [1,1,1,0,0,0,0,0,0,0 %a1
  
  Xk = ones(10,1);
  size(Xk)
- X =M\N;
+ X =M\N
  
  Nk=M*Xk
  
@@ -33,4 +33,8 @@ M = [1,1,1,0,0,0,0,0,0,0 %a1
  end
  
  Nk=M*Xk
+ 
+ K =null(M)
+ K(:,1)
+ K(:,2)
  
