@@ -8,7 +8,7 @@ A = double(A);                  % on transforme l'image en "double"
 
 figure(1);
 subplot(3,1,1)
-imshow(uint8(A));
+imshow(uint8(A));               % on affiche l'image initiale
 
 [U,S,V] =svd(A);                % calcul de la svd
 s =diag(S);
@@ -21,19 +21,19 @@ k = [5,40,100,200,590];
 n=length(k);
 
 figure(2);
-Ak =zeros(h,l,n);
-tau = zeros(1,n);
+Ak =zeros(h,l,n);       % initialisation de Ak
+tau = zeros(1,n);       % initialisation de tau
 
-subplot(2,n,(1:n));
+subplot(2,n,(1:n));     % on affiche l'image sur toute une ligne
 imshow(uint8(A));
 
 
 for j= 1:n
     for i =1:k(j)
-         Ak(:,:,j) = Ak(:,:,j) + s(i)*U(:,i)*V(:,i)'; % expression Ak qst3
+         Ak(:,:,j) = Ak(:,:,j) + s(i)*U(:,i)*V(:,i)'; % expression Ak
     end
-    tau(j) = k(j)*(1+h+l)/(h*l);
-    str =sprintf ('k=%d avec tau = %d ',k(j),tau(j));
+    tau(j) = k(j)*(1+h+l)/(h*l);                      % taux de compression
+    str =sprintf ('k=%d avec tau = %0.3f %% ',k(j),tau(j));
     subplot(2,n,n+j);
     imshow(uint8(Ak(:,:,j)));
     title(str);

@@ -1,0 +1,77 @@
+function show_fft (s, N, ve,v0,fig)
+    S = fft (s,N);
+    
+    figure  (fig);
+    
+    subplot (2,2,1)  ;
+    plot    (real(S));
+    title   ('La partie reelle:');
+    xlabel  ('indices matriciels:');
+    
+    subplot (2,2,2)  ;
+    plot    (imag(S));
+    title   ('La partie imagiaire:');
+    xlabel  ('indices matriciels:');
+
+    subplot (2,2,3)  ;
+    plot    (abs(S)) ;
+    title   ('La module:');
+    xlabel  ('indices matriciels:');
+    
+    subplot (2,2,4)   ;
+    plot    (angle(S));
+    title   ('Angle:');
+    xlabel  ('indices matriciels:');
+    
+    v_reduit = [0:ve/N:(ve-ve/N)]/v0;
+    size(v_reduit)
+    
+    figure  (fig+1);
+    
+    subplot (2,2,1)  ;
+    plot    (v_reduit,real(S));
+    title   ('La partie reelle:');
+    xlabel  ('Frequence reduite:');
+    
+    subplot (2,2,2)  ;
+    plot    (v_reduit,imag(S));
+    title   ('La partie imaginaire:');
+    xlabel  ('Frequence reduite:');
+
+    subplot (2,2,3)  ;
+    plot    (v_reduit,abs(S)) ;
+    title   ('Le Module:');
+    xlabel  ('Frequence reduite:');
+    
+    subplot (2,2,4)   ;
+    plot    (v_reduit,angle(S));
+    title   ('Angle:');
+    xlabel  ('Frequence Reduite:');
+    
+    v_reduit = [0:ve/N:(ve/2-ve/N)]/v0;
+    size(v_reduit)
+    
+    figure  (fig+2);
+    
+    subplot (2,2,1)  ;
+    plot    (v_reduit,real(S(1:N/2)));
+    title   ('La partie reelle de=:');
+    xlabel  ('Frequence reduite:');
+    
+    subplot (2,2,2)  ;
+    plot    (v_reduit,imag(S(1:N/2)));
+    title   ('La partie imaginaire:');
+    xlabel  ('Frequence reduite:');
+
+    subplot (2,2,3)  ;
+    plot    (v_reduit,abs(S(1:N/2))) ;
+    title   ('Le Module:');
+    xlabel  ('Frequence reduite:');
+    
+    subplot (2,2,4)   ;
+    plot    (v_reduit,angle(S(1:N/2)));
+    title   ('Angle:');
+    xlabel  ('Frequence Reduite:');
+    
+    
+end
