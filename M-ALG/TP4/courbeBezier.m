@@ -1,12 +1,10 @@
 function courbeBezier(X,Y)
 
 i=complex(0,1);t=0:0.01:1;s=1-t;
-plot([0,1,1+i,i,0]);
 
-P=X+i*Y
 
-plot(P,'-oc');% Tracé du polygone armature de la
-spline;
+P=X+i*Y;
+
 for k=1:length(X)-1;
     
     Pt(k)=(2*P(k)+P(k+1))/3; %Premier Tiers

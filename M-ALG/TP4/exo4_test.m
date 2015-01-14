@@ -5,7 +5,11 @@ i=complex(0,1)
 t=0:0.01:1; s=1-t;
 
 plot([0,1,1+i,i,0]);
-[X,Y]=getpts;
+
+N = 10;
+X = rand(N,1);
+Y = rand(N,1);
+
 P=X+i*Y
 
 plot(P,'-oc'); % Tracé du polygone armature de la spline
