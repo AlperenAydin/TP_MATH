@@ -27,5 +27,8 @@ for k=1:length(X)-3;
     hold on;
 end
 
+prompt = 'Filename : '
+filename = input(prompt)
 
+save(filename, X,Y);
 
