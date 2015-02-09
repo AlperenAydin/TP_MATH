@@ -1,4 +1,4 @@
-function y = ecriture(str)
+function ecriture(str)
     l = length(str)
     
     curseur_x = 0; 

@@ -37,3 +37,5 @@ title('Les termes positives de module de la gain complexe');
 subplot (2,2,4);
 plot(F(1:N/2),unwrap(angle(gain_complexe(1:N/2))));%phase de gain complexe
 title('Le phase du gain complexe')
+
+% bande a - 3 db !!!!!!!!!!!!!!!!!!!!!!!!!!!!
