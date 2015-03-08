@@ -9,25 +9,26 @@ for i = 1:N
 end
 
 disque = find(Rayon <= 1); %Le nombre des fleches dans le disque
-NonDisque =  find(Rayon > 1);
+DisqueX = X(disque);
+DisqueY = Y(disque);
 
 A = length (disque);
 PA = 4*A / N
 
 % affichage
 
+figure(1);
 t = [0:0.01:1];
 F = sqrt(1- t.^2);
 plot(t,F);
+title('Methode de Monte-Carlo:')
+xlabel('x');ylabel('y');
 
-DisqueX = X(disque);
-DisqueY = Y(disque);
-
-scatter(DisqueX,DisqueY);
-
-NDisqueX = X(NonDisque);
-NDisqueY = Y(NonDisque);
-
-scatter(NDisqueX,NDisqueY);
+scatter(X,Y,'r');
+scatter(DisqueX,DisqueY,'g');
 
 
+figure(2);
+area(t,F);
+title('Methode de Monte-Carlo:')
+xlabel('x');ylabel('y');

@@ -1,6 +1,6 @@
 function n = LoiGeometrique(p)
 
-    compteur = 0;
+    compteur = 1;
     
     x =LoiBernoulli(p);
     while x == 1
