@@ -1,4 +1,4 @@
-function x = experience(n)
+function x = empirique(n)
 
     N = 5000;
     compteur =0;

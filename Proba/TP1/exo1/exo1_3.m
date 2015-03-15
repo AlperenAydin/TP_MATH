@@ -7,7 +7,7 @@ empirique = zeros (1,l);
 for i = 1:l
     valeur = vals(i);
     theorie(i) = theorique(valeur);
-    empirique(i) = experience (valeur); 
+    empirique(i) = empirique (valeur); 
 end
 
 
