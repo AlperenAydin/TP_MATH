@@ -1,3 +1,4 @@
+% Dans cette exo, on choisi les impacts aleatoirement.
 clear all;close all; hold on; grid on;
 
 n_cases=24;
