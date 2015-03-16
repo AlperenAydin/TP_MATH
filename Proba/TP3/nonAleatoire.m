@@ -1,4 +1,7 @@
-% Dans cette exo, on choisi les impacts aleatoirement.
+% Dans cette cas, un certaines nombre d'impacts sont choisi
+% aleatoirement sur tout les cases.
+% La reste sont choisit sur une portition des cases.
+
 clear all;close all; hold on; grid on;
 
 n_cases=24;
@@ -7,34 +10,44 @@ cy=[1:n_cases];
 [CX,CY]=meshgrid(cx,cy);
 
 figure(1);
-%mesh(CX,CY,zeros(n_cases,n_cases));
-
-M = zeros (n_cases,n_cases);            % initialisation de la matrice
+M = zeros (n_cases,n_cases);
 
 n_impacts=537;
+n_impacts_rand = 250;
 
-for i=1:n_impacts
+for i=1:n_impacts_rand
 
-    x=randi(n_cases);           % on génère les coordonnées du point d'impact
+    x=randi(n_cases);
     y=randi(n_cases);
     
-    M(x,y)=M(x,y)+1;            % incrémentation du nb d'impacts dans M
-    
+    M(x,y)=M(x,y)+1;
 end
+
+% La portion cible est une carre au centre de hauteur 5
+aire_cible = 5;
+for i=1:(n_impacts-n_impacts_rand)
+
+    x=9+randi(5);
+    y=9+randi(5);
+    
+    M(x,y)=M(x,y)+1;
+end
+
 
 b=bar3(M);
 colorbar;
 
 for i = 1:length(b)
-     zdata = get(b(i),'Zdata');
-     set(b(i),'Cdata',zdata);
-     set(b,'EdgeColor','k','FaceColor','interp');
-
+      zdata = get(b(i),'Zdata');
+      set(b(i),'Cdata',zdata);
+      set(b,'EdgeColor','k','FaceColor','interp');
+ 
 end
 
 figure(2);hold on;
 n_zones = n_cases*n_cases;
 
+% La Probabilite theorique
 M=M(:); % il mets les 24X24 par une ligne
 m = max(M);
 absM = [0:m];
