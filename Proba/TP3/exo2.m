@@ -21,16 +21,16 @@ for i=1:n_impacts
     M(x,y)=M(x,y)+1;
     
 end
-
-b=bar3(M);
-colorbar;
-
-for i = 1:length(b)
-     zdata = get(b(i),'Zdata');
-     set(b(i),'Cdata',zdata);
-     set(b,'EdgeColor','k','FaceColor','interp');
-
-end
+% $$$ 
+% $$$ b=bar3(M);
+% $$$ colorbar;
+% $$$ 
+% $$$ for i = 1:length(b)
+% $$$      zdata = get(b(i),'Zdata');
+% $$$      set(b(i),'Cdata',zdata);
+% $$$      set(b,'EdgeColor','k','FaceColor','interp');
+% $$$ 
+% $$$ end
 
 figure(2);hold on;
 n_zones = n_cases*n_cases;
