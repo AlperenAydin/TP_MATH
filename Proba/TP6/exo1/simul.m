@@ -8,3 +8,9 @@ M = zeros(21,21);
 
 N = 10000;
 [X,Y] = simulation(N);
+
+for i = 1:N
+   x = 1+ (floor(10*X(i))) /10; 
+   y = 1+ (floor(10*Y(i))) /10;  
+    
+end
