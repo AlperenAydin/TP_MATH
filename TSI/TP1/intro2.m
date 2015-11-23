@@ -37,7 +37,8 @@ colormap gray;
 title('Image binaire de I');
 
 figure(5);
-Id = bwdist(Ib); % On calcule la carte de la distance de l'image binaire
+Id = bwdist(Ib); 
+
 imagesc(Id);
 colormap gray;
 title('Carte des distances');
