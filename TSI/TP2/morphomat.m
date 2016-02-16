@@ -98,7 +98,11 @@ while m > 0
    gran = diff( fliplr(m));
    subplot(3,2,[5,6]);
    l = length(gran);
+<<<<<<< HEAD
    bar(1:2:2l,gran);
+=======
+   bar(1:2:2,gran);
+>>>>>>> 7e0b27259d211ce1663c0e737e31b3c4254e9587
    pause(0.01);
 end
 
