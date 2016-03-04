@@ -1,0 +1,4 @@
+# Hashes of file build rules.
+0480a6842a9f08713c6cf5ecfde06f8b src/moc_render_area.cxx
+d3727ab16baa2648fff63ae4014b9010 src/moc_window.cxx
+fc3bb447a39013d2b363e348d95c9acb ui_mainwindow.h

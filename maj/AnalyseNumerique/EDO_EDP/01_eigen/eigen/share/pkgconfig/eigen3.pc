@@ -1,0 +1,9 @@
+prefix=/fs02/share/users/alperen.aydin/home/TP_math/maj/AnalyseNumerique/EDO_EDP/01_eigen/eigen
+exec_prefix=${prefix}
+
+Name: Eigen3
+Description: A C++ template library for linear algebra: vectors, matrices, and related algorithms
+Requires:
+Version: 3.2.8
+Libs:
+Cflags: -I${prefix}/include/eigen3

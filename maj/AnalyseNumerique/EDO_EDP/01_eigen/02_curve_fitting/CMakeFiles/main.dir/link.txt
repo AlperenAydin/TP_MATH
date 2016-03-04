@@ -1,0 +1,1 @@
+/usr/bin/c++   -Wall -Wextra -O2 -std=c++11 -Wno-deprecated-declarations -g    CMakeFiles/main.dir/src/fitting.cpp.o CMakeFiles/main.dir/src/point_set.cpp.o CMakeFiles/main.dir/src/polynomial.cpp.o CMakeFiles/main.dir/src/main.cpp.o CMakeFiles/main.dir/src/vec2.cpp.o  -o main -rdynamic 

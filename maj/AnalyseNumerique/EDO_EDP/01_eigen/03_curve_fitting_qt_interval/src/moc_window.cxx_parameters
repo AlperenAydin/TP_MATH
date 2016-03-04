@@ -1,0 +1,10 @@
+-I/usr/include/qt4
+-I/usr/include/qt4/QtGui
+-I/usr/include/qt4/QtCore
+-I/fs02/share/users/alperen.aydin/home/TP_math/maj/AnalyseNumerique/EDO_EDP/01_eigen/03_curve_fitting_qt_interval
+-I/fs02/share/users/alperen.aydin/home/TP_math/maj/AnalyseNumerique/EDO_EDP/01_eigen/03_curve_fitting_qt_interval/../eigen/include/eigen3
+-DQT_GUI_LIB
+-DQT_CORE_LIB
+-o
+/fs02/share/users/alperen.aydin/home/TP_math/maj/AnalyseNumerique/EDO_EDP/01_eigen/03_curve_fitting_qt_interval/src/moc_window.cxx
+/fs02/share/users/alperen.aydin/home/TP_math/maj/AnalyseNumerique/EDO_EDP/01_eigen/03_curve_fitting_qt_interval/src/window.hpp
