@@ -1,4 +1,4 @@
-function F = interation(f, f_prev, dx, dt)
+function F = iteration(f, f_prev, dx, dt)
 
 l = length(f);
 a = (dt/dx)^2;

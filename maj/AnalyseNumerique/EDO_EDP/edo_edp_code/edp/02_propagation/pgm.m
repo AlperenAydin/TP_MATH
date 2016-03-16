@@ -31,7 +31,7 @@ u = [2:Nx-1];
 for k_time=[0:dt:total_time]
 
     f_temp = f;
-    f = interation(f, f_prev, dx, dt );
+    f = iteration(f, f_prev, dx, dt );
     f_prev = f_temp;
 
     if( t_counter>time_interval )

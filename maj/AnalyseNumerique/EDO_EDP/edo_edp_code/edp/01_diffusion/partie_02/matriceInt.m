@@ -1,4 +1,4 @@
-function M = matriceDiff(dx ,dt, l)
+function M = matriceInt(dx ,dt, l)
 
 r = dt/(dx^2);
 

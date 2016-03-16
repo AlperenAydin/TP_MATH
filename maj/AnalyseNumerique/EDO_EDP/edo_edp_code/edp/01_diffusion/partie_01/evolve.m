@@ -8,7 +8,7 @@ function f_out = evolve(f_in,dx,dt)
 l = length(f_in);
 r = dt/(dx^2);
 
-f_out = (1-2*r)*f_in;
+f_out = (1-2*r)*f_in; % (1-2r) f(x,t)
 
-f_out(1:l-1) = f_out(1:l-1)+ r*f_in(2:l);
-f_out(2:l) = f_out(2:l) + r*f_in(1:l-1);
+f_out(1:l-1) = f_out(1:l-1)+ r*f_in(2:l); % r*f(x + dx, t)
+f_out(2:l) = f_out(2:l) + r*f_in(1:l-1);  % r*f(x - dx, t)

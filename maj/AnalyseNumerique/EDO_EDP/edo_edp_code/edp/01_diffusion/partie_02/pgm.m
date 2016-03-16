@@ -3,10 +3,10 @@ clf;
 close;
 
 % Pas d'échantillonnage spatial
-dx = 1e-4;
+dx = 0.01;
 
 % Pas d'échantillonnage temporel
-dt = 5e-4;
+dt = 4e-4;
 
 % Valeurs de x echantillonnées
 x = [0:dx:1];
@@ -22,18 +22,14 @@ time_interval = 0.001;
 
 
 % Integration numerique
-f1 = f0;
-f2 = f0;
+f = f0;
 t_counter = 0;
-f1_save = [];
-f2_save = [];
-M  = matriceDiff(dx, dt, length(f0));
+f_save = [];
+M  = matriceInt(dx, dt, length(f0));
 for k=[0:dt:total_time]
-    f1 = evolve(f1,dx,dt);
-    f2 = M\f2;
+    f = M\f;
     if( t_counter>time_interval )
-        f1_save = [f1_save,f1];
-        f2_save = [f2_save,f2];
+        f_save = [f_save,f];
         t_counter = 0;
     else
         t_counter = t_counter + dt;
@@ -42,11 +38,16 @@ for k=[0:dt:total_time]
 end
 
 % Affichage
+figure();
+
 plot(x,f0,'k'); %f0 en bleu
 hold on
-for k=[1:size(f1_save,2)]
-    plot(x,f1_save(:,k),'r');  %f1 en rouge
-    plot(x,f2_save(:,k),'b');  %f2 en violet
+for k=[1:size(f_save,2)]
+    plot(x,f_save(:,k));  %f2 en violet
+    title(['Diffusion thérmique avec dx = ', num2str(dx), ' et dt = ', ...
+       num2str(dt)], 'FontSize', 13);
+    xlabel('x');
+    ylabel('y');
+    legend('Original', 'Iterations');	
 end
-%%axis([0,1,0,1])
 
